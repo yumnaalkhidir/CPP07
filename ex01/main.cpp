@@ -1,19 +1,6 @@
 #include "iter.hpp"
 #include <iostream>
 
-template <typename T, typename F>
-void iter(T* arr, int size, F function)
-{
-    for (int i = 0; i < size; i++)
-        function(arr[i]);
-}
-
-template<typename T>
-void print(const T& value)
-{
-    std::cout << value << " ";
-}
-
 void increment(int& i)
 {
     i++;
@@ -44,5 +31,25 @@ int main(void)
     iter(array, 3, add_exclamation);
 
     iter(array, 3, print<std::string>);
+    std::cout << std::endl;
+
+    const int arr2[4] = {4, 5, 6, 7};
+
+    iter(arr2, 4, print<int>);
+    std::cout << std::endl;
+
+    iter(arr2, 4, print_plus_one);
+
+    iter(arr2, 4, print<int>);
+    std::cout << std::endl;
+    
+    const std::string array2[3] = {"Hello", "42", "Abu Dhabi"};
+    
+    iter(array2, 3, print<std::string>);
+    std::cout << std::endl;
+    
+    iter(array2, 3, add_exclamation);
+
+    iter(array2, 3, print<std::string>);
     std::cout << std::endl;
 }

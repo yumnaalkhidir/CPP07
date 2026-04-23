@@ -8,7 +8,7 @@ HEADER		:=  Array.hpp
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADER)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)

@@ -16,11 +16,10 @@ class Array
         Array(unsigned int n);
         Array(const Array& copy);
         Array<T>& operator=(const Array& other);
+        ~Array();
         T& operator[](unsigned int index);
         const T& operator[](unsigned int index) const;
-        ~Array();
         unsigned int size() const;
-    
 };
 
 template <typename T>
@@ -36,7 +35,10 @@ Array<T>::Array(unsigned int n)
 {
     std::cout << "Parameterized Constructor called" << std::endl;
     _size = n;
-    data = new T[_size];
+    if (n == 0)
+        data = NULL;
+    else
+        data = new T[_size];
 }
 
 template <typename T>
@@ -44,9 +46,14 @@ Array<T>::Array(const Array& copy)
 {
     std::cout << "Copy Constructor called" << std::endl;
     _size = copy._size;
-    data = new T[_size];
-    for (unsigned int i = 0;i < _size; i++)
-    data[i] = copy.data[i];
+    if (_size == 0)
+        data = NULL;
+    else
+    {
+        data = new T[_size];
+        for (unsigned int i = 0; i < _size; i++)
+            data[i] = copy.data[i];
+    }
 }
 
 template <typename T>
@@ -57,10 +64,15 @@ Array<T>& Array<T>::operator=(const Array& other)
     {
         delete[] data;
         _size = other._size;
-        data = new T[_size];
-        for (unsigned int i = 0;i < _size; i++)
-        data[i] = other.data[i];
-}
+        if (_size == 0)
+            data = NULL;
+        else
+        {
+            data = new T[_size];
+            for (unsigned int i = 0; i < _size; i++)
+                data[i] = copy.data[i];
+        }
+    }
     return (*this);
 }
 
@@ -86,6 +98,7 @@ const T& Array<T>::operator[](unsigned int index) const
         throw std::out_of_range("Index out of bounds");
     return (data[index]);
 }
+
 template <typename T>
 unsigned int Array<T>::size() const
 {
