@@ -33,23 +33,8 @@ int main(void)
     iter(array, 3, print<std::string>);
     std::cout << std::endl;
 
-    const int arr2[4] = {4, 5, 6, 7};
 
-    iter(arr2, 4, print<int>);
-    std::cout << std::endl;
-
-    iter(arr2, 4, print_plus_one);
-
-    iter(arr2, 4, print<int>);
-    std::cout << std::endl;
-    
-    const std::string array2[3] = {"Hello", "42", "Abu Dhabi"};
-    
-    iter(array2, 3, print<std::string>);
-    std::cout << std::endl;
-    
-    iter(array2, 3, add_exclamation);
-
-    iter(array2, 3, print<std::string>);
+    const int constArr[4] = {10, 20, 30, 40};
+    iter(constArr, 4, print<int>);
     std::cout << std::endl;
 }
