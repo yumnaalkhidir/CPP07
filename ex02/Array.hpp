@@ -70,7 +70,7 @@ Array<T>& Array<T>::operator=(const Array& other)
         {
             data = new T[_size];
             for (unsigned int i = 0; i < _size; i++)
-                data[i] = copy.data[i];
+                data[i] = other.data[i];
         }
     }
     return (*this);

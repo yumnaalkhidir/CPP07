@@ -33,7 +33,6 @@ int main(void)
     iter(array, 3, print<std::string>);
     std::cout << std::endl;
 
-
     const int constArr[4] = {10, 20, 30, 40};
     iter(constArr, 4, print<int>);
     std::cout << std::endl;
