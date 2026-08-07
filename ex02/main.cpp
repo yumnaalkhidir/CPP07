@@ -73,27 +73,3 @@ int main()
 
     return 0;
 }
-
-
-// int main(void)
-// {
-//     {
-//         Array<int> int_arr;
-//         std::cout << "Arr size: " << int_arr.size() << std::endl;
-//     }
-//     std::cout << "---------------------------------" <<std::endl;
-//     {
-//         const Array<int> int_arr(5);
-//         std::cout << "Arr size: " << int_arr.size() << std::endl;
-//         // int_arr[0] = 1;
-//         // int_arr[1] = 2;
-//         // int_arr[2] = 3;
-//         // int_arr[3] = 4;
-//         // int_arr[4] = 5;
-//         for (unsigned int i = 0; i < int_arr.size(); i++)
-//         {
-//             std::cout << int_arr[i] << " " ;
-//         }
-//         std::cout << std::endl;
-//     }
-// }
