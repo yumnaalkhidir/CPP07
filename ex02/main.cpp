@@ -49,6 +49,18 @@ int main()
     const Array<int> constArray(numbers);
     std::cout << "constArray[2]: " << constArray[2] << std::endl;
 
+    std::cout << "\n---- Empty Array Test ----" << std::endl;
+    const Array<int> emptyArray(0);
+    std::cout << "emptyArray size: " << emptyArray.size() << std::endl;
+    try
+    {
+        emptyArray[0];
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
     std::cout << "\n---- String Array Test ----" << std::endl;
     Array<std::string> words(3);
 

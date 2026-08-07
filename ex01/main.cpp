@@ -1,5 +1,4 @@
 #include "iter.hpp"
-#include <iostream>
 
 void increment(int& i)
 {

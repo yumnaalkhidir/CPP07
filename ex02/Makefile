@@ -1,5 +1,5 @@
 CXX			:= c++
-CXXFLAGS	:= -Wall -Werror -Wextra
+CXXFLAGS	:= -Wall -Werror -Wextra -std=c++98
 NAME		:= array
 FILES		:= main.cpp
 OBJ			:= $(FILES:.cpp=.o)
